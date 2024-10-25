@@ -1,0 +1,81 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+/* Container for the sections */
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Section styles */
+.section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    position: relative;
+    flex: 1 1 30%; /* Default for desktop: take 30% of the width */
+    min-width: 200px;
+    margin-right: 15px;
+}
+
+.section:last-child {
+    margin-right: 0;
+}
+
+/* Section title styles */
+.title {
+    background-color: #ffa500;
+    color: white;
+    padding: 5px;
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(20%, -50%);
+    font-size: 1.25em;
+}
+
+/* Media queries for tablet view (768px - 991px) */
+@media (max-width: 991px) {
+    .section {
+        flex: 1 1 45%; /* Two sections on top row, one on the bottom */
+        margin-right: 10px;
+    }
+
+    .section:nth-child(3) {
+        flex-basis: 100%; /* The third section takes the whole row */
+        margin-right: 0;
+    }
+}
+
+/* Media queries for mobile view (<= 767px) */
+@media (max-width: 767px) {
+    .section {
+        flex: 1 1 100%; /* Each section takes the whole row */
+        margin-right: 0;
+    }
+}
+
+/* Spacing and text formatting */
+p {
+    margin-top: 40px; /* Ensures text does not overlap the title */
+    font-size: 1em;
+    line-height: 1.5;
+}
